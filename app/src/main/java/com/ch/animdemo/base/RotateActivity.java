@@ -44,8 +44,8 @@ public class RotateActivity extends AppCompatActivity {
             case R.id.btn_1:
                 //fromDegrees     开始旋转的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
                 //toDegrees         结束时旋转到的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
-                //pivotX        缩放起点X轴坐标，可以是数值、百分数、百分数p 三种样式 同scale
-                //pivotY               缩放起点Y轴坐标，可以是数值、百分数、百分数p 三种样式
+                //pivotX        旋转起点X轴坐标，可以是数值、百分数、百分数p 三种样式 同scale
+                //pivotY               旋转起点Y轴坐标，可以是数值、百分数、百分数p 三种样式
                 rotateAnimation = new RotateAnimation(0, 720, 0, 0);
                 rotateAnimation.setDuration(2000);
                 tvDemo.startAnimation(rotateAnimation);
@@ -63,7 +63,7 @@ public class RotateActivity extends AppCompatActivity {
                 tvDemo.startAnimation(rotateAnimation);
                 break;
             case R.id.btn_4:
-                rotateAnimation = new RotateAnimation(0, -720, RotateAnimation.RELATIVE_TO_PARENT, 0.5f,
+                rotateAnimation = new RotateAnimation(0, -720, RotateAnimation.RELATIVE_TO_PARENT, 0f,
                         RotateAnimation.RELATIVE_TO_PARENT, 0.5f);
                 rotateAnimation.setDuration(2000);
                 tvDemo.startAnimation(rotateAnimation);

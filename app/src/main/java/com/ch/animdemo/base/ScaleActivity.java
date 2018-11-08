@@ -67,7 +67,7 @@ public class ScaleActivity extends AppCompatActivity {
                 tvDemo.startAnimation(scaleAnimation);
                 break;
             case R.id.btn_2:
-                //pivotx,pivotY 动画起始位置+50
+                //pivotx,pivotY 动画起始位置+100
                 scaleAnimation = new ScaleAnimation(0, 1.4f, 0, 1.4f, 100, 100);
                 scaleAnimation.setDuration(2000);
                 tvDemo.startAnimation(scaleAnimation);
