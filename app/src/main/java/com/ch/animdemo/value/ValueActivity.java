@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
@@ -42,38 +43,6 @@ public class ValueActivity extends AppCompatActivity {
     TextView tvDemo;
 
     private ValueAnimator valueAnimator;
-    private ValueAnimator.AnimatorUpdateListener animatorUpdateListener = new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-
-            int curValue = (int) animation.getAnimatedValue();
-            tvDemo.layout(curValue, curValue, curValue + tvDemo.getWidth(), curValue + tvDemo.getHeight());
-        }
-    };
-    private ValueAnimator.AnimatorUpdateListener animatorUpdateListenerF = new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            Float curValueFloat = (Float) animation.getAnimatedValue();
-            int curValue = curValueFloat.intValue();
-            tvDemo.layout(curValue, curValue, curValue + tvDemo.getWidth(), curValue + tvDemo.getHeight());
-        }
-    };
-    private ValueAnimator.AnimatorUpdateListener animatorUpdateListenerA = new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            int curValue = (int) animation.getAnimatedValue();
-            tvDemo.setBackgroundColor(curValue);
-
-        }
-    };
-    private ValueAnimator.AnimatorUpdateListener animatorUpdateListenerC = new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            char text = (char) animation.getAnimatedValue();
-            tvDemo.setText(String.valueOf(text));
-
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +50,17 @@ public class ValueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_value);
         ButterKnife.bind(this);
         getSupportActionBar().setTitle("ValueAnimator");
+        valueAnimator = ValueAnimator.ofFloat(0, 1f);
+        valueAnimator.setDuration(200);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Log.e("cheng", "value=" + animation.getAnimatedValue());
+            }
+        });
+
+        valueAnimator.start();
+        tvDemo.setBackgroundColor(1);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -90,7 +70,13 @@ public class ValueActivity extends AppCompatActivity {
             case R.id.btn_1:
                 valueAnimator = ValueAnimator.ofInt(0, 400);
                 valueAnimator.setDuration(2000);
-                valueAnimator.addUpdateListener(animatorUpdateListener);
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        int curValue = (int) animation.getAnimatedValue();
+                        tvDemo.layout(curValue, curValue, curValue + tvDemo.getWidth(), curValue + tvDemo.getHeight());
+                    }
+                });
                 valueAnimator.start();
 
                 break;
@@ -98,32 +84,64 @@ public class ValueActivity extends AppCompatActivity {
 
                 valueAnimator = ValueAnimator.ofInt(0, 400, 0);
                 valueAnimator.setDuration(2000);
-                valueAnimator.addUpdateListener(animatorUpdateListener);
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        int curValue = (int) animation.getAnimatedValue();
+                        tvDemo.layout(curValue, curValue, curValue + tvDemo.getWidth(), curValue + tvDemo.getHeight());
+                    }
+                });
                 valueAnimator.start();
                 break;
             case R.id.btn_3:
                 valueAnimator = ValueAnimator.ofFloat(0, 400f, 0, 800f, 0);
                 valueAnimator.setDuration(2000);
-                valueAnimator.addUpdateListener(animatorUpdateListenerF);
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        Float curValueFloat = (Float) animation.getAnimatedValue();
+                        int curValue = curValueFloat.intValue();
+                        tvDemo.layout(curValue, curValue, curValue + tvDemo.getWidth(), curValue + tvDemo.getHeight());
+                    }
+                });
                 valueAnimator.start();
                 break;
             case R.id.btn_4:
                 valueAnimator = ValueAnimator.ofFloat(0, 400f, 0, 800f, 0);
                 valueAnimator.setDuration(2000);
                 valueAnimator.setInterpolator(new DecelerateInterpolator());
-                valueAnimator.addUpdateListener(animatorUpdateListenerF);
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        Float curValueFloat = (Float) animation.getAnimatedValue();
+                        int curValue = curValueFloat.intValue();
+                        tvDemo.layout(curValue, curValue, curValue + tvDemo.getWidth(), curValue + tvDemo.getHeight());
+                    }
+                });
                 valueAnimator.start();
                 break;
             case R.id.btn_5:
                 valueAnimator = ValueAnimator.ofArgb(0xffffff00, 0xff0000ff);
                 valueAnimator.setDuration(2000);
-                valueAnimator.addUpdateListener(animatorUpdateListenerA);
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        int curValue = (int) animation.getAnimatedValue();
+                        tvDemo.setBackgroundColor(curValue);
+                    }
+                });
                 valueAnimator.start();
                 break;
             case R.id.btn_6:
-                valueAnimator = ValueAnimator.ofObject(new CharEvaluator(), new Character('A'), new Character('Z'));
+                valueAnimator = ValueAnimator.ofObject(new CharEvaluator(), 'A', 'Z');
                 valueAnimator.setDuration(2000);
-                valueAnimator.addUpdateListener(animatorUpdateListenerC);
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        char text = (char) animation.getAnimatedValue();
+                        tvDemo.setText(String.valueOf(text));
+                    }
+                });
                 valueAnimator.start();
                 break;
         }

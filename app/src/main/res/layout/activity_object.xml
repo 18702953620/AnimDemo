@@ -43,25 +43,6 @@
                 android:text="缩放" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Argb" />
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="字母" />
-
-        </LinearLayout>
-
 
     </LinearLayout>
 

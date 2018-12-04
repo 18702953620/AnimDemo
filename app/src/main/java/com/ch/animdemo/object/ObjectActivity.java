@@ -28,10 +28,6 @@ public class ObjectActivity extends AppCompatActivity {
     AppCompatButton btn3;
     @BindView(R.id.btn_4)
     AppCompatButton btn4;
-    @BindView(R.id.btn_5)
-    AppCompatButton btn5;
-    @BindView(R.id.btn_6)
-    AppCompatButton btn6;
     @BindView(R.id.tv_demo)
     TextView tvDemo;
     private ObjectAnimator objectAnimator;
@@ -62,7 +58,7 @@ public class ObjectActivity extends AppCompatActivity {
          */
     }
 
-    @OnClick({R.id.btn_1, R.id.btn_2, R.id.btn_3, R.id.btn_4, R.id.btn_5, R.id.btn_6})
+    @OnClick({R.id.btn_1, R.id.btn_2, R.id.btn_3, R.id.btn_4})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_1:
@@ -84,10 +80,6 @@ public class ObjectActivity extends AppCompatActivity {
                 objectAnimator = ObjectAnimator.ofFloat(tvDemo, "scaleX", 0, 3, 1);
                 objectAnimator.setDuration(2000);
                 objectAnimator.start();
-                break;
-            case R.id.btn_5:
-                break;
-            case R.id.btn_6:
                 break;
         }
     }

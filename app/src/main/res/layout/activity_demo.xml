@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".demo.DemoActivity">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -16,36 +16,17 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_base"
+                android:id="@+id/ball"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="基础动画" />
+                android:text="Ball" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_value"
+                android:id="@+id/wxImg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="属性动画" />
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_obj"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="ObjectAnimator" />
-
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_ball"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Demo" />
-
+                android:text="wxImg" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
 
 </android.support.constraint.ConstraintLayout>

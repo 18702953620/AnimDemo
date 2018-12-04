@@ -24,7 +24,13 @@
         <activity android:name=".base.SetActivity" />
         <activity android:name=".base.InterpolatorActivity" />
         <activity android:name=".value.ValueActivity" />
-        <activity android:name=".object.ObjectActivity"></activity>
+        <activity android:name=".object.ObjectActivity" />
+        <activity android:name=".demo.BallActivity" />
+        <activity android:name=".demo.DemoActivity" />
+        <activity android:name=".demo.WXPicActivity" />
+        <activity
+            android:name=".demo.ImgActivity"
+            android:theme="@style/transparent"></activity>
     </application>
 
 </manifest>

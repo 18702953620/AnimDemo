@@ -55,13 +55,13 @@ public class InterpolatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_interpolator);
         ButterKnife.bind(this);
         getSupportActionBar().setTitle("Interpolator");
-        //AccelerateDecelerateInterpolator   在动画开始与介绍的地方速率改变比较慢，在中间的时候加速
-        //AccelerateInterpolator                     在动画开始的地方速率改变比较慢，然后开始加速
+        //AccelerateDecelerateInterpolator   在动画开始与结束比较慢，中间加速
+        //AccelerateInterpolator                     加速
         //AnticipateInterpolator                      开始的时候向后然后向前甩
         //AnticipateOvershootInterpolator     开始的时候向后然后向前甩一定值后返回最后的值
         //BounceInterpolator                          动画结束的时候弹起
         //CycleInterpolator                             动画循环播放特定的次数，速率改变沿着正弦曲线
-        //DecelerateInterpolator                    在动画开始的地方快然后慢
+        //DecelerateInterpolator                   减速
         //LinearInterpolator                            以常量速率改变
         //OvershootInterpolator                      向前甩一定值后再回到原来位置
 
@@ -77,12 +77,12 @@ public class InterpolatorActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_1:
-                //AccelerateDecelerateInterpolator   在动画开始与介绍的地方速率改变比较慢，在中间的时候加速
+                //AccelerateDecelerateInterpolator    在动画开始与结束比较慢，中间加速
                 rotateAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
                 tvDemo.startAnimation(rotateAnimation);
                 break;
             case R.id.btn_2:
-                //AccelerateInterpolator                     在动画开始的地方速率改变比较慢，然后开始加速
+                //AccelerateInterpolator                      加速
                 rotateAnimation.setInterpolator(new AccelerateInterpolator());
                 tvDemo.startAnimation(rotateAnimation);
                 break;
@@ -107,7 +107,7 @@ public class InterpolatorActivity extends AppCompatActivity {
                 tvDemo.startAnimation(rotateAnimation);
                 break;
             case R.id.btn_7:
-                //DecelerateInterpolator                    在动画开始的地方快然后慢
+                //DecelerateInterpolator                      减速
                 rotateAnimation.setInterpolator(new DecelerateInterpolator());
                 tvDemo.startAnimation(rotateAnimation);
                 break;
