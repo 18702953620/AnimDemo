@@ -99,6 +99,7 @@ public class ImgActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 ImgActivity.super.onBackPressed();
+                overridePendingTransition(0, 0);
             }
 
             @Override
