@@ -36,6 +36,12 @@
                 android:layout_margin="10dp"
                 android:text="ObjectAnimator" />
 
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="path" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btn_ball"

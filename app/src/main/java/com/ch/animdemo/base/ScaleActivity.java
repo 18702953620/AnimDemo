@@ -86,6 +86,8 @@ public class ScaleActivity extends AppCompatActivity {
                 scaleAnimation.setDuration(2000);
                 tvDemo.startAnimation(scaleAnimation);
                 break;
+            default:
+                
         }
     }
 }

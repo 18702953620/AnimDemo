@@ -159,6 +159,7 @@ public class SetActivity extends AppCompatActivity {
 
                 tvDemo.startAnimation(animationSet);
                 break;
+            default:
         }
     }
 }

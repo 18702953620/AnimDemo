@@ -144,6 +144,7 @@ public class ValueActivity extends AppCompatActivity {
                 });
                 valueAnimator.start();
                 break;
+            default:
         }
     }
 

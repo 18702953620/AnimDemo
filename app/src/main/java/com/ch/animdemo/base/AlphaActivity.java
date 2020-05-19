@@ -49,6 +49,7 @@ public class AlphaActivity extends AppCompatActivity {
                 alphaAnimation.setDuration(2000);
                 tvDemo.startAnimation(alphaAnimation);
                 break;
+            default:
         }
     }
 }

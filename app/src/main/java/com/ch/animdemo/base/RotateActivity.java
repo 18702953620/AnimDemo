@@ -68,6 +68,7 @@ public class RotateActivity extends AppCompatActivity {
                 rotateAnimation.setDuration(2000);
                 tvDemo.startAnimation(rotateAnimation);
                 break;
+            default:
         }
     }
 }

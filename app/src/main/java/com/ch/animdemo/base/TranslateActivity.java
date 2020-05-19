@@ -61,6 +61,7 @@ public class TranslateActivity extends AppCompatActivity {
                 translateAnimation.setDuration(2000);
                 tvDemo.startAnimation(translateAnimation);
                 break;
+            default:
         }
     }
 }

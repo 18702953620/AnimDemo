@@ -42,6 +42,7 @@ public class DemoActivity extends AppCompatActivity {
                 startActivity(new Intent(DemoActivity.this, WX2Activity.class));
                 break;
 
+            default:
         }
     }
 }

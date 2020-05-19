@@ -58,6 +58,7 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.btn_interploator:
                 startActivity(new Intent(BaseActivity.this, InterpolatorActivity.class));
                 break;
+            default:
         }
     }
 }

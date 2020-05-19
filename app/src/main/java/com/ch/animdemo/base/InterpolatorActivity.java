@@ -121,6 +121,7 @@ public class InterpolatorActivity extends AppCompatActivity {
                 rotateAnimation.setInterpolator(new OvershootInterpolator());
                 tvDemo.startAnimation(rotateAnimation);
                 break;
+            default:
         }
     }
 }

@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- *
+ * @author ch
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_base, R.id.btn_value, R.id.btn_obj, R.id.btn_ball})
+    @OnClick({R.id.btn_base, R.id.btn_value, R.id.btn_obj, R.id.btn_ball, R.id.btn_path})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_base:
@@ -52,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_ball:
                 startActivity(new Intent(MainActivity.this, DemoActivity.class));
                 break;
+
+            case R.id.btn_path:
+
+                break;
+            default:
         }
     }
 }
