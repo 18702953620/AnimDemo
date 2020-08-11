@@ -47,14 +47,15 @@ public class WX2Activity extends AppCompatActivity {
     private void initView() {
         list = new ArrayList<>();
         list.add("http://img1.imgtn.bdimg.com/it/u=4206294871,879077254&fm=26&gp=0.jpg");
-        list.add("http://img1.imgtn.bdimg.com/it/u=1901690610,3955011377&fm=200&gp=0.jpg");
-        list.add("http://img3.imgtn.bdimg.com/it/u=1546158593,2358526642&fm=200&gp=0.jpg");
         list.add("http://img0.imgtn.bdimg.com/it/u=3792909229,2321547963&fm=200&gp=0.jpg");
-        list.add("http://img4.imgtn.bdimg.com/it/u=1621655683,865218969&fm=200&gp=0.jpg");
         list.add("http://img5.imgtn.bdimg.com/it/u=4286838121,1364454560&fm=26&gp=0.jpg");
         list.add("http://img5.imgtn.bdimg.com/it/u=551944592,1654216059&fm=26&gp=0.jpg");
-        list.add("http://img1.imgtn.bdimg.com/it/u=2550323596,2167297465&fm=200&gp=0.jpg");
         list.add("http://img4.imgtn.bdimg.com/it/u=952962361,1269259737&fm=26&gp=0.jpg");
+        list.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595838936226&di=5326f7d6d02f5ea56dabb2d3065fbd2d&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-12-11%2F5a2e3dd020a79.jpg");
+        list.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595839401948&di=531406cfab0bc9d5bc4094641491c2a5&imgtype=0&src=http%3A%2F%2Fwww.boruisz.com%2Fimages%2Fnfwwombsfz2g633pobsw4ltdn5wq%2Fimages%2F20140311%2Fsy_56511421248.jpg");
+        list.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595839429544&di=0d7ed6e3a11c3778395b8cc330415883&imgtype=0&src=http%3A%2F%2Fp3.ssl.cdn.btime.com%2Ft01355c8e8b57796351.jpg%3Fsize%3D500x714");
+        list.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595839456871&di=f2d498d60d7e0b7cb326ac460b3ce4fb&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn02%2F295%2Fw640h455%2F20181113%2F7666-hnstwwr2992253.jpg");
+
 
         wxAdapter = new WxAdapter(list);
         rvWx2.setLayoutManager(new GridLayoutManager(WX2Activity.this, 3));
